@@ -4,8 +4,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = target.offsetTop - navbarHeight - 20;
+            const headerHeight = document.querySelector('.site-header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 24;
 
             window.scrollTo({
                 top: targetPosition,
@@ -15,55 +15,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add active state to navigation links based on scroll position
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('.section');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    let current = '';
-    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - navbarHeight - 100;
-        const sectionHeight = section.offsetHeight;
-
-        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
 // Handle missing profile image gracefully
 window.addEventListener('DOMContentLoaded', () => {
-    const profileImage = document.querySelector('.profile-image');
+    const profileImage = document.querySelector('.profile-photo');
 
-    profileImage.addEventListener('error', function() {
-        // Create a placeholder with initials if image fails to load
-        const placeholder = document.createElement('div');
-        placeholder.className = 'profile-placeholder';
-        placeholder.textContent = 'JM';
-        placeholder.style.cssText = `
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: bold;
-            border: 4px solid white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        `;
-
-        this.parentNode.replaceChild(placeholder, this);
-    });
+    if (profileImage) {
+        profileImage.addEventListener('error', function() {
+            // Create a placeholder with initials if image fails to load
+            const placeholder = document.createElement('div');
+            placeholder.className = 'profile-placeholder';
+            placeholder.textContent = 'JM';
+            this.parentNode.replaceChild(placeholder, this);
+        });
+    }
 });
