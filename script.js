@@ -28,4 +28,34 @@ window.addEventListener('DOMContentLoaded', () => {
             this.parentNode.replaceChild(placeholder, this);
         });
     }
+
+    // Add active state to navigation links based on scroll position
+    const sections = document.querySelectorAll('.content-section, .hero');
+    const navLinks = document.querySelectorAll('.main-nav a');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -80% 0px',
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        if (section.getAttribute('id')) {
+            observer.observe(section);
+        }
+    });
 });
