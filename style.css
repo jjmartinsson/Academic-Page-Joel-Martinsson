@@ -1252,3 +1252,138 @@ body {
         text-align: center;
     }
 }
+
+/* ============================================
+   Linnaeus University Branding (Contact Section)
+   ============================================ */
+.section-lnu {
+    background: linear-gradient(135deg, #fefce8 0%, #fef9c3 50%, #fef08a 100%);
+    position: relative;
+}
+
+.section-lnu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ca8a04, #eab308, #ca8a04);
+}
+
+.section-lnu .section-label {
+    color: #a16207;
+}
+
+.section-lnu h2 {
+    color: #78350f;
+}
+
+.section-lnu p {
+    color: #92400e;
+}
+
+.section-lnu .contact-item {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(202, 138, 4, 0.2);
+}
+
+.section-lnu .contact-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(202, 138, 4, 0.4);
+}
+
+.section-lnu .contact-item strong {
+    color: #78350f;
+}
+
+.section-lnu .contact-item span {
+    color: #92400e;
+}
+
+.section-lnu .social-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(202, 138, 4, 0.2);
+}
+
+.section-lnu .social-card:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(202, 138, 4, 0.4);
+}
+
+.section-lnu .social-card-info strong {
+    color: #78350f;
+}
+
+.section-lnu .social-card-info span {
+    color: #92400e;
+}
+
+.section-lnu h3 {
+    color: #78350f;
+}
+
+.social-card-lnu {
+    background: linear-gradient(135deg, rgba(234, 179, 8, 0.15), rgba(202, 138, 4, 0.2)) !important;
+    border-color: rgba(202, 138, 4, 0.3) !important;
+}
+
+.social-card-lnu:hover {
+    background: linear-gradient(135deg, rgba(234, 179, 8, 0.25), rgba(202, 138, 4, 0.3)) !important;
+}
+
+.lnu-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+    padding: var(--space-sm) var(--space-md);
+    background: linear-gradient(135deg, #ca8a04, #eab308);
+    border-radius: var(--radius);
+    color: white;
+    font-weight: 600;
+}
+
+.lnu-logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* ============================================
+   Project Team & Funding Styles
+   ============================================ */
+.project-funding {
+    margin: var(--space-md) 0;
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid rgba(234, 179, 8, 0.6);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.project-team {
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+}
+
+.project-team h4 {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: var(--space-xs);
+}
+
+.project-team p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
