@@ -1387,3 +1387,222 @@ body {
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
 }
+
+.project-team a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.project-team a:hover {
+    color: white;
+}
+
+/* ============================================
+   Project Banner (Top Corner)
+   ============================================ */
+.project-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #1e40af 100%);
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 1000;
+    border-bottom-right-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s;
+}
+
+.project-banner:hover {
+    background: linear-gradient(135deg, #1e40af 0%, var(--color-accent) 100%);
+    padding-right: 1.25rem;
+}
+
+.project-banner span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-banner span::before {
+    content: '→';
+    font-size: 0.85rem;
+}
+
+/* Current Status Note */
+.current-status {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+    border-left: 3px solid var(--color-accent);
+}
+
+/* ============================================
+   Redesigned Contact Section
+   ============================================ */
+.section-contact {
+    background: var(--color-bg);
+    padding: var(--space-3xl) 0;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.contact-header .section-description {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-xl);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.2s;
+}
+
+.contact-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.contact-card-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+}
+
+.contact-card strong {
+    font-size: 1.1rem;
+    color: var(--color-heading);
+    margin-bottom: var(--space-xs);
+}
+
+.contact-card span {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+.contact-card-email:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.1));
+}
+
+.contact-card-location {
+    cursor: default;
+}
+
+.contact-card-location:hover {
+    transform: none;
+}
+
+.location-cities {
+    font-weight: 600;
+    color: var(--color-accent) !important;
+    margin-top: var(--space-xs);
+}
+
+.social-links-section {
+    text-align: center;
+}
+
+.social-links-section h3 {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    margin-bottom: var(--space-md);
+}
+
+.social-links-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.social-link-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.social-link-item:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.social-link-item svg {
+    flex-shrink: 0;
+}
+
+.social-link-lnu {
+    background: linear-gradient(135deg, #fef9c3, #fef08a);
+    border-color: #ca8a04;
+}
+
+.social-link-lnu:hover {
+    background: linear-gradient(135deg, #fef08a, #fde047);
+    border-color: #a16207;
+    color: #78350f;
+}
+
+.lnu-icon {
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0.15rem 0.4rem;
+    background: rgba(202, 138, 4, 0.2);
+    border-radius: 3px;
+    color: #78350f;
+}
+
+@media (max-width: 600px) {
+    .project-banner {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.75rem 0.4rem 0.5rem;
+    }
+
+    .social-links-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-link-item {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+}
