@@ -1,12 +1,13 @@
 // ============================================
 // JOEL MARTINSSON - ACADEMIC WEBSITE
-// Clean, Minimal JavaScript
+// Clean, Minimal JavaScript with Language Support
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initHeaderScroll();
     initScrollReveal();
+    initLanguageSwitcher();
 });
 
 // ============================================
@@ -68,4 +69,70 @@ function initScrollReveal() {
         el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(el);
     });
+}
+
+// ============================================
+// LANGUAGE SWITCHER
+// ============================================
+function initLanguageSwitcher() {
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+
+    // Set initial language
+    setLanguage(savedLang);
+
+    // Update button states
+    langBtns.forEach(btn => {
+        if (btn.dataset.lang === savedLang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            setLanguage(lang);
+            localStorage.setItem('preferredLang', lang);
+
+            // Update button states
+            langBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+}
+
+function setLanguage(lang) {
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+
+    // Update all elements with data-en and data-sv attributes
+    const translatableElements = document.querySelectorAll('[data-en][data-sv]');
+
+    translatableElements.forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) {
+            // Check if it contains HTML
+            if (text.includes('<') && text.includes('>')) {
+                el.innerHTML = text;
+            } else {
+                el.textContent = text;
+            }
+        }
+    });
+
+    // Update select options
+    const selectOptions = document.querySelectorAll('select option[data-en][data-sv]');
+    selectOptions.forEach(option => {
+        const text = option.getAttribute(`data-${lang}`);
+        if (text) {
+            option.textContent = text;
+        }
+    });
+
+    // Update page title based on language
+    if (lang === 'sv') {
+        document.title = 'Joel Martinsson — Statsvetare';
+    } else {
+        document.title = 'Joel Martinsson — Political Scientist';
+    }
 }

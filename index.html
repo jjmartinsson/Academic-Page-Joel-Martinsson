@@ -9,14 +9,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="sv">SV</button>
+    </div>
+
     <header class="site-header">
         <div class="container">
             <a href="/" class="site-title">Joel Martinsson</a>
             <nav class="main-nav">
-                <a href="#current">Current Work</a>
-                <a href="#previous">Previous Work</a>
-                <a href="#publications">Publications</a>
-                <a href="#contact">Contact</a>
+                <a href="#current" data-en="Current Work" data-sv="Aktuellt">Current Work</a>
+                <a href="#previous" data-en="Previous Work" data-sv="Tidigare Arbete">Previous Work</a>
+                <a href="#publications" data-en="Publications" data-sv="Publikationer">Publications</a>
+                <a href="#contact" data-en="Contact" data-sv="Kontakt">Contact</a>
             </nav>
         </div>
     </header>
@@ -27,13 +33,13 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
-                        <p class="hero-eyebrow">Political Science Researcher</p>
+                        <p class="hero-eyebrow" data-en="Political Science Researcher" data-sv="Statsvetenskaplig Forskare">Political Science Researcher</p>
                         <h1>Joel Martinsson</h1>
-                        <p class="hero-lead">I study <strong>ethical dilemmas</strong> in politics and crisis situations—exploring the gap between what we think leaders should do and what they actually do when faced with impossible choices.</p>
-                        <p class="hero-sub">Currently developing <a href="#current">Saving of Swedovia</a>, an interactive simulation exploring ethical decision-making in crises. Previously, I spent four years interviewing Swedish parliamentarians about political ethics.</p>
+                        <p class="hero-lead" data-en="I study <strong>ethical dilemmas</strong> in politics and crisis situations—exploring the gap between what we think leaders should do and what they actually do when faced with impossible choices." data-sv="Jag studerar <strong>etiska dilemman</strong> inom politik och krissituationer—och utforskar klyftan mellan vad vi tror att ledare borde göra och vad de faktiskt gör när de ställs inför omöjliga val.">I study <strong>ethical dilemmas</strong> in politics and crisis situations—exploring the gap between what we think leaders should do and what they actually do when faced with impossible choices.</p>
+                        <p class="hero-sub" data-en='Currently developing <a href="#current">Saving of Swedovia</a>, an interactive simulation exploring ethical decision-making in crises. My dissertation is under contract with Routledge.' data-sv='Utvecklar för närvarande <a href="#current">Saving of Swedovia</a>, en interaktiv simulering som utforskar etiskt beslutsfattande i kriser. Min avhandling är under kontrakt med Routledge.'>Currently developing <a href="#current">Saving of Swedovia</a>, an interactive simulation exploring ethical decision-making in crises. My dissertation is under contract with Routledge.</p>
                         <div class="hero-links">
-                            <a href="#current" class="btn btn-primary">Current Project</a>
-                            <a href="#publications" class="btn btn-secondary">Publications</a>
+                            <a href="#current" class="btn btn-primary" data-en="Current Project" data-sv="Aktuellt Projekt">Current Project</a>
+                            <a href="#publications" class="btn btn-secondary" data-en="Publications" data-sv="Publikationer">Publications</a>
                         </div>
                         <div class="hero-social">
                             <a href="https://bsky.app/profile/jmartinsson.bsky.social" class="social-link" target="_blank" title="Bluesky">
@@ -60,94 +66,140 @@
             </div>
         </section>
 
-        <!-- Current Work Section -->
+        <!-- Current Work Section: Saving of Swedovia -->
         <section id="current" class="section section-featured">
             <div class="container">
-                <div class="section-label">Current Focus</div>
+                <div class="section-label" data-en="Current Focus" data-sv="Aktuellt Fokus">Current Focus</div>
                 <div class="featured-project">
                     <div class="project-header">
-                        <span class="project-tag">New Research Project</span>
+                        <span class="project-tag" data-en="New Research Project" data-sv="Nytt Forskningsprojekt">New Research Project</span>
                         <h2>Saving of Swedovia</h2>
-                        <p class="project-subtitle">An Interactive Exploration of Ethical Dilemmas in Crisis Situations</p>
+                        <p class="project-subtitle" data-en="An Interactive Exploration of Ethical Dilemmas in Crisis Situations" data-sv="En Interaktiv Utforskning av Etiska Dilemman i Krissituationer">An Interactive Exploration of Ethical Dilemmas in Crisis Situations</p>
                     </div>
+
+                    <!-- Swedovia Image -->
+                    <div class="swedovia-image-container">
+                        <img src="swedovia-map.jpg" alt="Map of Swedovia - The fictional nation in crisis" class="swedovia-image" onerror="this.parentElement.innerHTML='<div class=\'swedovia-placeholder\'><span>🗺️</span><p>Swedovia Map</p><small>Upload swedovia-map.jpg</small></div>'">
+                    </div>
+
                     <div class="project-content">
                         <div class="project-description">
-                            <p><strong>Saving of Swedovia</strong> is a newly launched research project that uses interactive simulation to explore how people navigate ethical dilemmas during crises. The project examines decision-making under pressure, when leaders must choose between competing values with no clear right answer.</p>
-                            <p>Building on my previous work interviewing parliamentarians about political ethics, this project extends the research into crisis management—where the stakes are even higher and time for deliberation is limited.</p>
-                            <h3>Key Questions</h3>
+                            <p data-en="<strong>Saving of Swedovia</strong> is a newly launched research project that uses interactive simulation to explore how people navigate ethical dilemmas during crises. The project examines decision-making under pressure, when leaders must choose between competing values with no clear right answer." data-sv="<strong>Saving of Swedovia</strong> är ett nyligen lanserat forskningsprojekt som använder interaktiv simulering för att utforska hur människor navigerar etiska dilemman under kriser. Projektet undersöker beslutsfattande under press, när ledare måste välja mellan konkurrerande värden utan något tydligt rätt svar."><strong>Saving of Swedovia</strong> is a newly launched research project that uses interactive simulation to explore how people navigate ethical dilemmas during crises. The project examines decision-making under pressure, when leaders must choose between competing values with no clear right answer.</p>
+                            <p data-en="Building on my previous work interviewing parliamentarians about political ethics, this project extends the research into crisis management—where the stakes are even higher and time for deliberation is limited." data-sv="Med grund i mitt tidigare arbete med att intervjua parlamentariker om politisk etik, utvidgar detta projekt forskningen till krishantering—där insatserna är ännu högre och tiden för överläggning är begränsad.">Building on my previous work interviewing parliamentarians about political ethics, this project extends the research into crisis management—where the stakes are even higher and time for deliberation is limited.</p>
+                            <h3 data-en="Key Questions" data-sv="Centrala Frågor">Key Questions</h3>
                             <ul>
-                                <li>How do ethical principles hold up under crisis conditions?</li>
-                                <li>What role does interprofessional collaboration play in ethical decision-making?</li>
-                                <li>Can simulations help train better crisis leadership?</li>
+                                <li data-en="How do ethical principles hold up under crisis conditions?" data-sv="Hur håller etiska principer under krisförhållanden?">How do ethical principles hold up under crisis conditions?</li>
+                                <li data-en="What role does interprofessional collaboration play in ethical decision-making?" data-sv="Vilken roll spelar interprofessionellt samarbete i etiskt beslutsfattande?">What role does interprofessional collaboration play in ethical decision-making?</li>
+                                <li data-en="Can simulations help train better crisis leadership?" data-sv="Kan simuleringar hjälpa till att träna bättre krisledarskap?">Can simulations help train better crisis leadership?</li>
                             </ul>
-                            <p class="project-note">Presented at the <strong>CICE Conference 2025</strong> at Linnaeus University, bringing together researchers and practitioners in emergency care and crisis management.</p>
+                            <p class="project-note" data-en="Presented at the <strong>CICE Conference 2025</strong> at Linnaeus University, bringing together researchers and practitioners in emergency care and crisis management." data-sv="Presenterat vid <strong>CICE-konferensen 2025</strong> vid Linnéuniversitetet, som samlar forskare och praktiker inom akutsjukvård och krishantering.">Presented at the <strong>CICE Conference 2025</strong> at Linnaeus University, bringing together researchers and practitioners in emergency care and crisis management.</p>
                         </div>
                         <div class="project-meta">
                             <div class="meta-card">
-                                <span class="meta-label">Status</span>
-                                <span class="meta-value">Active Research</span>
+                                <span class="meta-label" data-en="Status" data-sv="Status">Status</span>
+                                <span class="meta-value" data-en="Active Research" data-sv="Aktiv Forskning">Active Research</span>
                             </div>
                             <div class="meta-card">
-                                <span class="meta-label">Focus</span>
-                                <span class="meta-value">Crisis Ethics</span>
+                                <span class="meta-label" data-en="Focus" data-sv="Fokus">Focus</span>
+                                <span class="meta-value" data-en="Crisis Ethics" data-sv="Krisetik">Crisis Ethics</span>
                             </div>
                             <div class="meta-card">
-                                <span class="meta-label">Method</span>
-                                <span class="meta-value">Interactive Simulation</span>
+                                <span class="meta-label" data-en="Method" data-sv="Metod">Method</span>
+                                <span class="meta-value" data-en="Interactive Simulation" data-sv="Interaktiv Simulering">Interactive Simulation</span>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Contact Form for Swedovia -->
+                    <div class="swedovia-contact">
+                        <h3 data-en="Interested in Saving of Swedovia?" data-sv="Intresserad av Saving of Swedovia?">Interested in Saving of Swedovia?</h3>
+                        <p data-en="Are you a professional in crisis management, emergency services, or leadership training? Get in touch to learn more about the project or explore collaboration opportunities." data-sv="Arbetar du med krishantering, räddningstjänst eller ledarskapsutbildning? Hör av dig för att lära dig mer om projektet eller utforska samarbetsmöjligheter.">Are you a professional in crisis management, emergency services, or leadership training? Get in touch to learn more about the project or explore collaboration opportunities.</p>
+                        <form class="contact-form" action="https://formspree.io/f/xyzgkqvw" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name" data-en="Name" data-sv="Namn">Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" data-en="Email" data-sv="E-post">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="organization" data-en="Organization" data-sv="Organisation">Organization</label>
+                                <input type="text" id="organization" name="organization">
+                            </div>
+                            <div class="form-group">
+                                <label for="interest" data-en="Area of Interest" data-sv="Intresseområde">Area of Interest</label>
+                                <select id="interest" name="interest">
+                                    <option value="learn-more" data-en="Learn more about the project" data-sv="Lära mig mer om projektet">Learn more about the project</option>
+                                    <option value="collaboration" data-en="Research collaboration" data-sv="Forskningssamarbete">Research collaboration</option>
+                                    <option value="training" data-en="Training & workshops" data-sv="Utbildning & workshops">Training & workshops</option>
+                                    <option value="media" data-en="Media inquiry" data-sv="Mediaförfrågan">Media inquiry</option>
+                                    <option value="other" data-en="Other" data-sv="Annat">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-en="Message" data-sv="Meddelande">Message</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <input type="hidden" name="_subject" value="Saving of Swedovia Inquiry">
+                            <button type="submit" class="btn btn-form" data-en="Send Message" data-sv="Skicka Meddelande">Send Message</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Previous Work Section -->
+        <!-- Previous Work Section: Political Ethics & Democratic Governance -->
         <section id="previous" class="section">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-label">Foundation</div>
-                    <h2>Previous Work</h2>
-                    <p class="section-description">My research on political ethics in the Swedish Parliament</p>
+                    <div class="section-label" data-en="Foundation" data-sv="Grund">Foundation</div>
+                    <h2 data-en="Political Ethics & Democratic Governance" data-sv="Politisk Etik & Demokratisk Styrning">Political Ethics & Democratic Governance</h2>
+                    <p class="section-description" data-en="My research on ethics, transparency, and accountability in democratic politics" data-sv="Min forskning om etik, transparens och ansvarsutkrävande i demokratisk politik">My research on ethics, transparency, and accountability in democratic politics</p>
                 </div>
 
                 <div class="work-grid">
+                    <!-- Dissertation / Book -->
                     <article class="work-card work-card-featured">
-                        <div class="work-type">Dissertation</div>
+                        <div class="work-type" data-en="Dissertation → Book" data-sv="Avhandling → Bok">Dissertation → Book</div>
                         <h3>When Political Ethics Meets Political Practice</h3>
-                        <p class="work-subtitle">Dilemmas, Virtues & Vices in the Swedish Parliament</p>
-                        <p>For my PhD, I conducted <strong>74 in-depth interviews</strong> with Swedish parliamentarians, exploring how they navigate ethical dilemmas in their daily work. The central finding: politicians' biggest challenges stem not from choosing between good and evil, but from <strong>powerlessness</strong>—the constraints of party loyalty, limited resources, and institutional barriers.</p>
-                        <div class="work-stats">
-                            <div class="stat">
-                                <span class="stat-number">74</span>
-                                <span class="stat-label">Interviews</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">4</span>
-                                <span class="stat-label">Years</span>
+                        <p class="work-subtitle" data-en="Dilemmas, Virtues & Vices in the Swedish Parliament" data-sv="Dilemman, Dygder & Laster i Sveriges Riksdag">Dilemmas, Virtues & Vices in the Swedish Parliament</p>
+                        <p data-en="For my PhD, I conducted in-depth interviews with Swedish parliamentarians, exploring how they navigate ethical dilemmas in their daily work. The central finding: politicians' biggest challenges stem not from choosing between good and evil, but from <strong>powerlessness</strong>—the constraints of party loyalty, limited resources, and institutional barriers." data-sv="I min doktorsavhandling genomförde jag djupintervjuer med svenska riksdagsledamöter och undersökte hur de navigerar etiska dilemman i sitt dagliga arbete. Det centrala fyndet: politikers största utmaningar kommer inte från att välja mellan gott och ont, utan från <strong>maktlöshet</strong>—begränsningar av partilojalitet, begränsade resurser och institutionella hinder.">For my PhD, I conducted in-depth interviews with Swedish parliamentarians, exploring how they navigate ethical dilemmas in their daily work. The central finding: politicians' biggest challenges stem not from choosing between good and evil, but from <strong>powerlessness</strong>—the constraints of party loyalty, limited resources, and institutional barriers.</p>
+                        <div class="book-announcement">
+                            <span class="book-icon">📚</span>
+                            <div>
+                                <strong data-en="Coming from Routledge" data-sv="Kommer från Routledge">Coming from Routledge</strong>
+                                <span data-en="Currently under contract, being developed into:" data-sv="För närvarande under kontrakt, utvecklas till:">Currently under contract, being developed into:</span>
+                                <em>The Everyday Ethics of Politics: How Politicians Think About Dilemmas & Why You Should Care</em>
                             </div>
                         </div>
-                        <a href="https://lnu.diva-portal.org/smash/person.jsf?pid=authority-person:80586" class="work-link" target="_blank">Read dissertation →</a>
+                        <a href="https://lnu.diva-portal.org/smash/person.jsf?pid=authority-person:80586" class="work-link" target="_blank" data-en="Read dissertation →" data-sv="Läs avhandlingen →">Read dissertation →</a>
                     </article>
 
+                    <!-- BJPS Article -->
                     <article class="work-card">
-                        <div class="work-type">Journal Article</div>
+                        <div class="work-type" data-en="Journal Article" data-sv="Vetenskaplig Artikel">Journal Article</div>
                         <h3>Dilemmas of Powerlessness</h3>
                         <p class="work-subtitle">British Journal of Political Science</p>
-                        <p>The paper that introduced "powerlessness" as a central concept in understanding political ethics. Published in one of the field's leading journals.</p>
-                        <blockquote>"The most challenging ethical dilemmas for politicians stem mainly from powerlessness, not from choosing between good and evil."</blockquote>
-                        <a href="https://doi.org/10.1017/S000712342400022X" class="work-link" target="_blank">Read article →</a>
+                        <p data-en="The paper that introduced 'powerlessness' as a central concept in understanding political ethics. Published in one of the field's leading journals." data-sv="Artikeln som introducerade 'maktlöshet' som ett centralt begrepp för att förstå politisk etik. Publicerad i en av fältets ledande tidskrifter.">The paper that introduced "powerlessness" as a central concept in understanding political ethics. Published in one of the field's leading journals.</p>
+                        <blockquote data-en="The most challenging ethical dilemmas for politicians stem mainly from powerlessness, not from choosing between good and evil." data-sv="De mest utmanande etiska dilemmana för politiker härrör främst från maktlöshet, inte från att välja mellan gott och ont.">"The most challenging ethical dilemmas for politicians stem mainly from powerlessness, not from choosing between good and evil."</blockquote>
+                        <a href="https://doi.org/10.1017/S000712342400022X" class="work-link" target="_blank" data-en="Read article →" data-sv="Läs artikeln →">Read article →</a>
                     </article>
 
+                    <!-- Transparency Article -->
                     <article class="work-card">
-                        <div class="work-type">Research Theme</div>
-                        <h3>Political Ethics</h3>
-                        <p>My work examines the intersection of normative theory and empirical reality: What <em>should</em> politicians do? What <em>do</em> they actually do? And what explains the gap?</p>
+                        <div class="work-type" data-en="Journal Article" data-sv="Vetenskaplig Artikel">Journal Article</div>
+                        <h3 data-en="Political Judgment Above Transparency?" data-sv="Politiskt Omdöme Före Transparens?">Political Judgment Above Transparency?</h3>
+                        <p class="work-subtitle">Governance (2025)</p>
+                        <p data-en="A mixed-method study with 1,659 Swedish politicians exploring how transparency affects their cooperation with interest organizations. The findings reveal that politicians prioritize independent political judgment over transparency concerns." data-sv="En mixad metodstudie med 1 659 svenska politiker som undersöker hur transparens påverkar deras samarbete med intresseorganisationer. Resultaten visar att politiker prioriterar oberoende politiskt omdöme framför transparensfrågor.">A mixed-method study with 1,659 Swedish politicians exploring how transparency affects their cooperation with interest organizations. The findings reveal that politicians prioritize independent political judgment over transparency concerns.</p>
                         <ul class="work-themes">
-                            <li>Transparency & Honesty</li>
-                            <li>Virtue Ethics in Politics</li>
-                            <li>Institutional Corruption</li>
-                            <li>Democratic Accountability</li>
+                            <li data-en="Transparency" data-sv="Transparens">Transparency</li>
+                            <li data-en="Interest Organizations" data-sv="Intresseorganisationer">Interest Organizations</li>
+                            <li data-en="Political Judgment" data-sv="Politiskt Omdöme">Political Judgment</li>
                         </ul>
+                        <a href="https://doi.org/10.1111/gove.12912" class="work-link" target="_blank" data-en="Read article →" data-sv="Läs artikeln →">Read article →</a>
                     </article>
                 </div>
             </div>
@@ -157,8 +209,8 @@
         <section id="publications" class="section section-alt">
             <div class="container">
                 <div class="section-header">
-                    <div class="section-label">Research Output</div>
-                    <h2>Publications</h2>
+                    <div class="section-label" data-en="Research Output" data-sv="Forskning">Research Output</div>
+                    <h2 data-en="Publications" data-sv="Publikationer">Publications</h2>
                 </div>
 
                 <div class="publications-list">
@@ -223,7 +275,7 @@
                 </div>
 
                 <div class="publications-cta">
-                    <a href="https://scholar.google.com/citations?user=1Ds2ARYAAAAJ" class="btn btn-secondary" target="_blank">View all on Google Scholar</a>
+                    <a href="https://scholar.google.com/citations?user=1Ds2ARYAAAAJ" class="btn btn-secondary" target="_blank" data-en="View all on Google Scholar" data-sv="Visa alla på Google Scholar">View all on Google Scholar</a>
                 </div>
             </div>
         </section>
@@ -233,30 +285,30 @@
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-info">
-                        <div class="section-label">Get in Touch</div>
-                        <h2>Let's Connect</h2>
-                        <p>Interested in collaborating on research, discussing political ethics, or learning more about the Saving of Swedovia project? I'd love to hear from you.</p>
+                        <div class="section-label" data-en="Get in Touch" data-sv="Kontakta Mig">Get in Touch</div>
+                        <h2 data-en="Let's Connect" data-sv="Hör av dig">Let's Connect</h2>
+                        <p data-en="Interested in collaborating on research or discussing political ethics?" data-sv="Intresserad av forskningssamarbete eller att diskutera politisk etik?">Interested in collaborating on research or discussing political ethics?</p>
 
                         <div class="contact-details">
                             <a href="mailto:joel.martinsson@lnu.se" class="contact-item">
                                 <span class="contact-icon">✉️</span>
                                 <div>
-                                    <strong>Email</strong>
+                                    <strong data-en="Email" data-sv="E-post">Email</strong>
                                     <span>joel.martinsson@lnu.se</span>
                                 </div>
                             </a>
                             <div class="contact-item">
                                 <span class="contact-icon">🏛️</span>
                                 <div>
-                                    <strong>Institution</strong>
-                                    <span>Department of Political Science<br>Linnaeus University, Växjö</span>
+                                    <strong data-en="Institution" data-sv="Institution">Institution</strong>
+                                    <span data-en="Department of Political Science<br>Linnaeus University, Växjö" data-sv="Institutionen för statsvetenskap<br>Linnéuniversitetet, Växjö">Department of Political Science<br>Linnaeus University, Växjö</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="contact-social">
-                        <h3>Find me online</h3>
+                        <h3 data-en="Find me online" data-sv="Hitta mig online">Find me online</h3>
                         <div class="social-cards">
                             <a href="https://bsky.app/profile/jmartinsson.bsky.social" class="social-card" target="_blank">
                                 <div class="social-card-icon bluesky">
@@ -273,7 +325,7 @@
                                 </div>
                                 <div class="social-card-info">
                                     <strong>LinkedIn</strong>
-                                    <span>Most active here</span>
+                                    <span data-en="Most active here" data-sv="Mest aktiv här">Most active here</span>
                                 </div>
                             </a>
                             <a href="https://scholar.google.com/citations?user=1Ds2ARYAAAAJ" class="social-card" target="_blank">
@@ -282,7 +334,7 @@
                                 </div>
                                 <div class="social-card-info">
                                     <strong>Google Scholar</strong>
-                                    <span>Publications</span>
+                                    <span data-en="Publications" data-sv="Publikationer">Publications</span>
                                 </div>
                             </a>
                             <a href="https://lnu.se/en/staff/joel.martinsson/" class="social-card" target="_blank">
@@ -290,8 +342,8 @@
                                     <span>LNU</span>
                                 </div>
                                 <div class="social-card-info">
-                                    <strong>University Profile</strong>
-                                    <span>Linnaeus University</span>
+                                    <strong data-en="University Profile" data-sv="Universitetsprofil">University Profile</strong>
+                                    <span data-en="Linnaeus University" data-sv="Linnéuniversitetet">Linnaeus University</span>
                                 </div>
                             </a>
                         </div>

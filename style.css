@@ -964,3 +964,265 @@ body {
 .contact-item {
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
+
+/* ============================================
+   Language Switcher
+   ============================================ */
+.lang-switcher {
+    position: fixed;
+    top: 18px;
+    right: var(--space-lg);
+    z-index: 101;
+    display: flex;
+    gap: 4px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.lang-btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    color: var(--color-text);
+}
+
+.lang-btn.active {
+    background: var(--color-text);
+    color: var(--color-white);
+}
+
+/* ============================================
+   Swedovia Image
+   ============================================ */
+.swedovia-image-container {
+    margin: var(--space-xl) 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.swedovia-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.swedovia-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    text-align: center;
+}
+
+.swedovia-placeholder span {
+    font-size: 4rem;
+    margin-bottom: var(--space-sm);
+}
+
+.swedovia-placeholder p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-xs);
+}
+
+.swedovia-placeholder small {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================
+   Swedovia Contact Form
+   ============================================ */
+.swedovia-contact {
+    margin-top: var(--space-2xl);
+    padding: var(--space-xl);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+}
+
+.swedovia-contact h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    color: var(--color-white);
+}
+
+.swedovia-contact > p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--space-lg);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.75rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-form {
+    align-self: flex-start;
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e3a5f;
+    background: var(--color-white);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-form:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   Book Announcement
+   ============================================ */
+.book-announcement {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    margin: var(--space-md) 0;
+    padding: var(--space-md);
+    background: rgba(37, 99, 235, 0.08);
+    border-radius: var(--radius);
+    border-left: 3px solid var(--color-accent);
+}
+
+.book-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.book-announcement strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    margin-bottom: 0.25rem;
+}
+
+.book-announcement span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.book-announcement em {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--color-text);
+    font-style: italic;
+}
+
+/* Featured work card adjustments for book */
+.work-card-featured .book-announcement {
+    background: rgba(180, 83, 9, 0.1);
+    border-color: #b45309;
+}
+
+.work-card-featured .book-announcement strong {
+    color: #b45309;
+}
+
+/* ============================================
+   Responsive adjustments for new elements
+   ============================================ */
+@media (max-width: 900px) {
+    .lang-switcher {
+        top: 12px;
+        right: var(--space-sm);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .swedovia-contact {
+        padding: var(--space-lg);
+    }
+}
+
+@media (max-width: 600px) {
+    .lang-switcher {
+        position: static;
+        margin: 0 auto var(--space-sm);
+        justify-content: center;
+    }
+
+    .site-header {
+        padding-top: 50px;
+    }
+
+    .btn-form {
+        width: 100%;
+        text-align: center;
+    }
+}
