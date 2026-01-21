@@ -1356,13 +1356,15 @@ body {
    Project Team & Funding Styles
    ============================================ */
 .project-funding {
-    margin: var(--space-md) 0;
-    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-xl) 0 var(--space-lg);
+    padding: var(--space-md) var(--space-lg);
     background: rgba(255, 255, 255, 0.1);
-    border-left: 3px solid rgba(234, 179, 8, 0.6);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    border-left: 4px solid rgba(234, 179, 8, 0.8);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: center;
 }
 
 .project-team {
@@ -1509,17 +1511,27 @@ body {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.1));
 }
 
-.contact-card-location {
-    cursor: default;
+.contact-card-lnu {
+    background: linear-gradient(135deg, #fefce8, #fef9c3);
+    border-color: #ca8a04;
 }
 
-.contact-card-location:hover {
-    transform: none;
+.contact-card-lnu:hover {
+    background: linear-gradient(135deg, #fef9c3, #fef08a);
+    border-color: #a16207;
+}
+
+.contact-card-lnu strong {
+    color: #78350f;
+}
+
+.contact-card-lnu span {
+    color: #92400e;
 }
 
 .location-cities {
     font-weight: 600;
-    color: var(--color-accent) !important;
+    color: #a16207 !important;
     margin-top: var(--space-xs);
 }
 
