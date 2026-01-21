@@ -1688,6 +1688,45 @@ body {
     margin-bottom: var(--space-2xl);
 }
 
+.contact-cards-four {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+}
+
+.contact-card-small {
+    padding: var(--space-lg);
+}
+
+.contact-card-small .contact-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+}
+
+.contact-card-small .contact-card-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-card-small strong {
+    font-size: 0.95rem;
+}
+
+.contact-card-small .contact-card-label {
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1000px) {
+    .contact-cards-four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-cards-four {
+        grid-template-columns: 1fr;
+    }
+}
+
 .contact-card {
     display: flex;
     flex-direction: column;
