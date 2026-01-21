@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeaderScroll();
     initScrollReveal();
     initLanguageSwitcher();
+    initContactForm();
 });
 
 // ============================================
@@ -135,4 +136,33 @@ function setLanguage(lang) {
     } else {
         document.title = 'Joel Martinsson — Political Scientist';
     }
+}
+
+// ============================================
+// CONTACT FORM (Mailto-based)
+// ============================================
+function initContactForm() {
+    const form = document.getElementById('swedovia-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const organization = document.getElementById('organization').value;
+        const interest = document.getElementById('interest').value;
+        const message = document.getElementById('message').value;
+
+        const subject = encodeURIComponent(`Saving of Swedovia Inquiry: ${interest}`);
+        const body = encodeURIComponent(
+            `Name: ${name}\n` +
+            `Email: ${email}\n` +
+            `Organization: ${organization || 'Not specified'}\n` +
+            `Area of Interest: ${interest}\n\n` +
+            `Message:\n${message}`
+        );
+
+        window.location.href = `mailto:joel.martinsson@lnu.se?subject=${subject}&body=${body}`;
+    });
 }
