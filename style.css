@@ -1588,7 +1588,87 @@ body {
    ============================================ */
 .section-contact {
     background: var(--color-bg);
-    padding: var(--space-3xl) 0;
+    padding: var(--space-2xl) 0;
+}
+
+/* Blue Contact Section */
+.section-blue {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+    color: var(--color-white);
+}
+
+.section-blue .section-label {
+    color: #60a5fa;
+}
+
+.section-blue h2 {
+    color: var(--color-white);
+}
+
+.section-blue .section-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.section-blue .contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+}
+
+.section-blue .contact-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.section-blue .contact-card strong {
+    color: var(--color-white);
+}
+
+.section-blue .contact-card span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.section-blue .contact-card-label {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.section-blue .contact-card-lnu {
+    background: linear-gradient(135deg, rgba(234, 179, 8, 0.2), rgba(202, 138, 4, 0.3));
+    border-color: rgba(234, 179, 8, 0.4);
+}
+
+.section-blue .contact-card-lnu:hover {
+    background: linear-gradient(135deg, rgba(234, 179, 8, 0.3), rgba(202, 138, 4, 0.4));
+    border-color: rgba(234, 179, 8, 0.5);
+}
+
+.section-blue .contact-card-lnu strong {
+    color: #fef08a;
+}
+
+.section-blue .contact-card-lnu span {
+    color: rgba(254, 240, 138, 0.8);
+}
+
+.section-blue .location-cities {
+    color: #fcd34d !important;
+}
+
+.section-blue .social-links-section h3 {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.section-blue .social-link-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--color-white);
+}
+
+.section-blue .social-link-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--color-white);
 }
 
 .contact-header {
