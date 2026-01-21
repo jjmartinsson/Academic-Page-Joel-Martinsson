@@ -139,9 +139,52 @@ function setLanguage(lang) {
 }
 
 // ============================================
-// CONTACT FORM (FormSubmit.co handles submission)
+// CONTACT FORM (AJAX submission to stay on page)
 // ============================================
 function initContactForm() {
-    // Form submission is handled by FormSubmit.co
-    // No custom JavaScript needed
+    const form = document.getElementById('swedovia-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        const currentLang = localStorage.getItem('language') || 'en';
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = currentLang === 'sv' ? 'Skickar...' : 'Sending...';
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Show success message
+                const successMsg = currentLang === 'sv'
+                    ? 'Tack! Ditt meddelande har skickats.'
+                    : 'Thank you! Your message has been sent.';
+
+                form.innerHTML = `<div class="form-success"><span>✓</span><p>${successMsg}</p></div>`;
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            // Show error message
+            const errorMsg = currentLang === 'sv'
+                ? 'Något gick fel. Försök igen.'
+                : 'Something went wrong. Please try again.';
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            alert(errorMsg);
+        }
+    });
 }
