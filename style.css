@@ -8,6 +8,9 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
+    --lnu-yellow: #FFD700;
+    --lnu-yellow-light: #FFF8DC;
+    --lnu-yellow-dark: #DAA520;
     --text-color: #333;
     --light-bg: #f8f9fa;
     --border-color: #e1e4e8;
@@ -53,7 +56,7 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-links a {
@@ -128,6 +131,83 @@ body {
     margin-bottom: 1rem;
     font-size: 1.05rem;
     line-height: 1.7;
+}
+
+/* Project Section - Saving of Swedovia */
+.project-section {
+    background-color: var(--light-bg);
+    padding: 3rem 0;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.project-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-image {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-intro {
+    flex: 1;
+}
+
+.project-intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.project-content h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.professional-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.8rem;
+    margin: 1rem 0 2rem 0;
+}
+
+.professional-list li {
+    background-color: white;
+    padding: 0.8rem 1rem;
+    border-left: 4px solid var(--secondary-color);
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.project-quote {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.project-quote::before {
+    content: '"';
+    font-size: 4rem;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    opacity: 0.3;
+    font-family: Georgia, serif;
 }
 
 /* Research List */
@@ -221,22 +301,104 @@ body {
 }
 
 .teaching-item li {
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
-}
-
-/* Contact */
-.contact-info p {
     margin-bottom: 0.8rem;
     font-size: 1.05rem;
+    line-height: 1.6;
 }
 
-.contact-info a {
+/* Connect Section - Linnaeus University Branding */
+.connect-section {
+    background: linear-gradient(180deg, var(--lnu-yellow-light) 0%, #fff 100%);
+    padding: 3rem 0;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: none;
+}
+
+.connect-section h2 {
+    border-bottom-color: var(--lnu-yellow-dark);
+}
+
+.connect-content {
+    display: grid;
+    gap: 2rem;
+}
+
+.university-info {
+    margin-bottom: 1.5rem;
+}
+
+.lnu-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--lnu-yellow) 0%, var(--lnu-yellow-dark) 100%);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(218, 165, 32, 0.3);
+}
+
+.lnu-text {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.location-info {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.campus-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.campus {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--lnu-yellow);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.campus h4 {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--lnu-yellow-light);
+}
+
+.campus p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0;
+}
+
+.contact-details {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.contact-details p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.contact-details a {
     color: var(--link-color);
     text-decoration: none;
 }
 
-.contact-info a:hover {
+.contact-details a:hover {
     color: var(--link-hover);
     text-decoration: underline;
 }
@@ -255,11 +417,20 @@ body {
     color: white !important;
     text-decoration: none !important;
     border-radius: 4px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 
 .social-link:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.social-link.linkedin {
+    background-color: #0077B5;
+}
+
+.social-link.linkedin:hover {
+    background-color: #005885;
 }
 
 /* Footer */
@@ -268,7 +439,7 @@ footer {
     color: white;
     text-align: center;
     padding: 2rem 0;
-    margin-top: 3rem;
+    margin-top: 0;
 }
 
 footer p {
@@ -279,8 +450,13 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
-        gap: 1rem;
+        gap: 0.8rem;
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
     }
 
     .hero-content {
@@ -304,6 +480,24 @@ footer p {
     .research-list {
         grid-template-columns: 1fr;
     }
+
+    .project-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-image {
+        width: 150px;
+    }
+
+    .professional-list {
+        grid-template-columns: 1fr;
+    }
+
+    .campus-locations {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -322,5 +516,18 @@ footer p {
 
     .section {
         padding: 2rem 0;
+    }
+
+    .project-quote {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .lnu-badge {
+        padding: 0.6rem 1rem;
+    }
+
+    .lnu-text {
+        font-size: 1rem;
     }
 }
