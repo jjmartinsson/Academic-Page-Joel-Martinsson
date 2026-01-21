@@ -430,10 +430,19 @@ body {
 }
 
 /* Project Meta Cards */
+.project-content {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
 .project-meta {
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
+    position: sticky;
+    top: var(--space-lg);
 }
 
 .meta-card {
@@ -441,7 +450,17 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius);
     padding: var(--space-md);
-    text-align: center;
+    text-align: left;
+}
+
+.meta-card a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+}
+
+.meta-card a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 .meta-label {
@@ -455,9 +474,10 @@ body {
 }
 
 .meta-value {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #93c5fd;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
 }
 
 /* ============================================
@@ -883,14 +903,19 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+
     .project-meta {
         flex-direction: row;
         flex-wrap: wrap;
+        position: static;
     }
 
     .meta-card {
         flex: 1;
-        min-width: 120px;
+        min-width: 200px;
     }
 
     .work-grid {
@@ -1401,7 +1426,7 @@ body {
 }
 
 /* ============================================
-   Project Banner (Top Corner)
+   Project Banner (Top Right Corner)
    ============================================ */
 .project-banner {
     position: fixed;
@@ -1419,9 +1444,16 @@ body {
     transition: all 0.2s;
 }
 
+.project-banner-right {
+    left: auto;
+    right: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: var(--radius);
+    padding: 0.5rem 0.75rem 0.5rem 1rem;
+}
+
 .project-banner:hover {
     background: linear-gradient(135deg, #1e40af 0%, var(--color-accent) 100%);
-    padding-right: 1.25rem;
 }
 
 .project-banner span {
@@ -1430,9 +1462,114 @@ body {
     gap: 0.5rem;
 }
 
-.project-banner span::before {
-    content: '→';
+.project-banner-right span::before {
+    content: '←';
     font-size: 0.85rem;
+}
+
+/* ============================================
+   Hero Additional Styles
+   ============================================ */
+.highlight {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.hero-project {
+    font-size: 1rem;
+    color: var(--color-muted);
+    margin-top: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(37, 99, 235, 0.08);
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.hero-project a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hero-project a:hover {
+    text-decoration: underline;
+}
+
+.hero-teaching {
+    margin-top: var(--space-md);
+    font-size: 0.95rem;
+    color: var(--color-muted);
+}
+
+.hero-teaching a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.hero-teaching a:hover {
+    text-decoration: underline;
+}
+
+.hero-find-me {
+    margin-top: var(--space-lg);
+    text-align: left;
+}
+
+.hero-find-me > span {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.hero-social-centered {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.hero-social-centered .social-link {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--color-bg-alt);
+    color: var(--color-text);
+    transition: all 0.2s;
+}
+
+.hero-social-centered .social-link:hover {
+    background: var(--color-accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.lnu-flow {
+    font-family: serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ca8a04;
+}
+
+.hero-badge {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.hero-badge:hover {
+    color: var(--color-accent);
+}
+
+.footer-link {
+    color: var(--color-muted);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: var(--color-accent);
 }
 
 /* Current Status Note */
