@@ -388,6 +388,81 @@ body {
     margin-bottom: var(--space-md);
 }
 
+/* Links on the dark featured background — never default blue/purple */
+.project-description a,
+.project-description a:visited,
+.project-meta a,
+.project-meta a:visited {
+    color: #93c5fd;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(147, 197, 253, 0.4);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.project-description a:hover,
+.project-meta a:hover {
+    color: var(--color-white);
+    border-bottom-color: var(--color-white);
+}
+
+/* Project website call-to-action */
+.project-site-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(147, 197, 253, 0.3);
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.project-site-link:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #93c5fd;
+    transform: translateY(-2px);
+}
+
+/* Override the generic dark-background link rule above */
+.project-description a.project-site-link,
+.project-description a.project-site-link:visited {
+    border-bottom: 1px solid rgba(147, 197, 253, 0.3);
+}
+
+.project-site-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.project-site-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+.project-site-text strong {
+    font-size: 0.95rem;
+    color: var(--color-white);
+}
+
+.project-site-text span {
+    font-size: 0.85rem;
+    color: #93c5fd;
+}
+
+.project-site-arrow {
+    margin-left: auto;
+    color: #93c5fd;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.project-site-link:hover .project-site-arrow {
+    transform: translateX(4px);
+}
+
 .project-description h3 {
     font-size: 1rem;
     font-weight: 600;
@@ -1231,6 +1306,28 @@ body {
     font-size: 1rem;
     color: var(--color-text);
     font-style: italic;
+}
+
+.book-announcement .book-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.book-links a,
+.book-links a:visited {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #b45309;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.book-links a:hover {
+    color: #78350f;
+    text-decoration: underline;
 }
 
 /* Featured work card adjustments for book */
