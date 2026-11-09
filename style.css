@@ -298,8 +298,26 @@ body {
 }
 
 .section-featured {
-    background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+    /* Project palette: Saving of Swedovia (blue) by default */
+    --feat-bg-from: #1e3a5f;
+    --feat-bg-to: #0f172a;
+    --feat-accent: #60a5fa;
+    --feat-accent-soft: #93c5fd;
+    --feat-accent-rgb: 147, 197, 253;
+    --feat-highlight: #93c5fd;
+    background: linear-gradient(135deg, var(--feat-bg-from) 0%, var(--feat-bg-to) 100%);
     color: var(--color-white);
+}
+
+/* Herd & Homeland: forest and moss green with a deep-yellow detail,
+   matching the project's own website */
+.section-herd {
+    --feat-bg-from: #28473a;
+    --feat-bg-to: #15291f;
+    --feat-accent: #8fbf9f;
+    --feat-accent-soft: #b9d3bf;
+    --feat-accent-rgb: 185, 211, 191;
+    --feat-highlight: #e3bc4e;
 }
 
 .section-label {
@@ -312,7 +330,7 @@ body {
 }
 
 .section-featured .section-label {
-    color: #60a5fa;
+    color: var(--feat-accent);
 }
 
 .section-header {
@@ -349,8 +367,8 @@ body {
 .project-tag {
     display: inline-block;
     padding: 0.4rem 1rem;
-    background: rgba(96, 165, 250, 0.2);
-    color: #93c5fd;
+    background: rgba(var(--feat-accent-rgb), 0.18);
+    color: var(--feat-accent-soft);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -393,9 +411,9 @@ body {
 .project-description a:visited,
 .project-meta a,
 .project-meta a:visited {
-    color: #93c5fd;
+    color: var(--feat-accent-soft);
     text-decoration: none;
-    border-bottom: 1px solid rgba(147, 197, 253, 0.4);
+    border-bottom: 1px solid rgba(var(--feat-accent-rgb), 0.4);
     transition: color 0.2s, border-color 0.2s;
 }
 
@@ -409,58 +427,90 @@ body {
 .project-site-link {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    margin-top: var(--space-lg);
-    padding: var(--space-md);
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(147, 197, 253, 0.3);
-    border-radius: var(--radius);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+    padding: var(--space-md) var(--space-lg);
+    background:
+        linear-gradient(120deg, rgba(var(--feat-accent-rgb), 0.16), rgba(var(--feat-accent-rgb), 0.04));
+    border: 1px solid rgba(var(--feat-accent-rgb), 0.35);
+    border-radius: var(--radius-lg);
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
-.project-site-link:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: #93c5fd;
+.project-site-link:hover,
+.project-site-link:focus-visible {
+    background:
+        linear-gradient(120deg, rgba(var(--feat-accent-rgb), 0.26), rgba(var(--feat-accent-rgb), 0.08));
+    border-color: rgba(var(--feat-accent-rgb), 0.7);
     transform: translateY(-2px);
 }
 
 /* Override the generic dark-background link rule above */
 .project-description a.project-site-link,
 .project-description a.project-site-link:visited {
-    border-bottom: 1px solid rgba(147, 197, 253, 0.3);
+    border-bottom: 1px solid rgba(var(--feat-accent-rgb), 0.35);
 }
-
-.project-site-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
+.project-description a.project-site-link:hover {
+    border-bottom-color: rgba(var(--feat-accent-rgb), 0.7);
 }
 
 .project-site-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.4;
+    gap: 0.2rem;
+    line-height: 1.35;
+    min-width: 0;
+    flex: 1 1 220px;
+}
+
+.project-site-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--feat-accent);
 }
 
 .project-site-text strong {
-    font-size: 0.95rem;
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
     color: var(--color-white);
 }
 
-.project-site-text span {
-    font-size: 0.85rem;
-    color: #93c5fd;
+.project-site-lead {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
 }
 
-.project-site-arrow {
-    margin-left: auto;
-    color: #93c5fd;
-    font-size: 1.1rem;
-    transition: transform 0.2s;
+.project-site-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: 50px;
+    background: var(--feat-accent-soft);
+    color: var(--feat-bg-to);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.25s ease;
 }
 
-.project-site-link:hover .project-site-arrow {
-    transform: translateX(4px);
+.project-site-button svg {
+    transition: transform 0.25s ease;
+}
+
+.project-site-link:hover .project-site-button {
+    background: var(--color-white);
+}
+
+.project-site-link:hover .project-site-button svg {
+    transform: translate(2px, -2px);
 }
 
 .project-description h3 {
@@ -492,14 +542,148 @@ body {
     top: 0.65rem;
     width: 6px;
     height: 6px;
-    background: #60a5fa;
+    background: var(--feat-accent);
     border-radius: 50%;
+}
+
+/* Research questions (Saving of Swedovia) */
+.rq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.project-description .rq {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-md);
+    align-items: baseline;
+    padding: var(--space-md) var(--space-lg) var(--space-md) var(--space-md);
+    margin: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius);
+}
+
+.project-description .rq::before {
+    content: none;
+}
+
+.rq-label {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--feat-accent-soft);
+    min-width: 2.6ch;
+}
+
+.project-description .rq p {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.92);
+    min-width: 0;
+}
+
+/* Project phases (Herd & Homeland) */
+.phase-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.phase-list::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 0.6rem;
+    bottom: 0.6rem;
+    width: 2px;
+    background: rgba(var(--feat-accent-rgb), 0.3);
+}
+
+.project-description .phase {
+    position: relative;
+    padding: 0 0 var(--space-lg) 2.5rem;
+    margin: 0;
+}
+
+.project-description .phase:last-child {
+    padding-bottom: 0;
+}
+
+.project-description .phase::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--feat-bg-to);
+    border: 2px solid var(--feat-accent);
+}
+
+.project-description .phase.is-current::before {
+    background: var(--feat-highlight);
+    border-color: var(--feat-highlight);
+    box-shadow: 0 0 0 5px rgba(227, 188, 78, 0.22);
+}
+
+.phase-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+}
+
+.phase-num {
+    color: var(--feat-accent);
+}
+
+.phase-time {
+    color: rgba(255, 255, 255, 0.55);
+    font-variant-numeric: tabular-nums;
+}
+
+.phase-badge {
+    padding: 0.1rem 0.6rem;
+    border-radius: 50px;
+    background: var(--feat-highlight);
+    color: var(--feat-bg-to);
+    letter-spacing: 0.08em;
+}
+
+.project-description .phase h4 {
+    margin: 0.3rem 0 0.25rem;
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--color-white);
+}
+
+.project-description .phase p {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.78);
 }
 
 .project-note {
     padding: var(--space-md);
     background: rgba(255, 255, 255, 0.05);
-    border-left: 3px solid #60a5fa;
+    border-left: 3px solid var(--feat-accent);
     border-radius: 0 var(--radius) var(--radius) 0;
     font-size: 0.95rem;
 }
