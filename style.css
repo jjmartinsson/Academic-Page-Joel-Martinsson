@@ -305,6 +305,7 @@ body {
     --feat-accent-soft: #93c5fd;
     --feat-accent-rgb: 147, 197, 253;
     --feat-highlight: #93c5fd;
+    --feat-highlight-rgb: 147, 197, 253;
     background: linear-gradient(135deg, var(--feat-bg-from) 0%, var(--feat-bg-to) 100%);
     color: var(--color-white);
 }
@@ -318,6 +319,7 @@ body {
     --feat-accent-soft: #b9d3bf;
     --feat-accent-rgb: 185, 211, 191;
     --feat-highlight: #e3bc4e;
+    --feat-highlight-rgb: 227, 188, 78;
 }
 
 .section-label {
@@ -546,50 +548,7 @@ body {
     border-radius: 50%;
 }
 
-/* Research questions (Saving of Swedovia) */
-.rq-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: var(--space-sm);
-}
-
-.project-description .rq {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--space-md);
-    align-items: baseline;
-    padding: var(--space-md) var(--space-lg) var(--space-md) var(--space-md);
-    margin: 0;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius);
-}
-
-.project-description .rq::before {
-    content: none;
-}
-
-.rq-label {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 1;
-    color: var(--feat-accent-soft);
-    min-width: 2.6ch;
-}
-
-.project-description .rq p {
-    margin: 0;
-    font-family: var(--font-serif);
-    font-size: 1.15rem;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.92);
-    min-width: 0;
-}
-
-/* Project phases (Herd & Homeland) */
+/* Project phases timeline (both projects) */
 .phase-list {
     list-style: none;
     padding: 0;
@@ -632,7 +591,20 @@ body {
 .project-description .phase.is-current::before {
     background: var(--feat-highlight);
     border-color: var(--feat-highlight);
-    box-shadow: 0 0 0 5px rgba(227, 188, 78, 0.22);
+    box-shadow: 0 0 0 5px rgba(var(--feat-highlight-rgb), 0.25);
+}
+
+.project-description .phase.is-done::before {
+    background: var(--feat-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 10px no-repeat;
+}
+
+.project-description .phase.is-done h4,
+.project-description .phase.is-done p {
+    opacity: 0.75;
+}
+
+.phase-status {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .phase-meta {
